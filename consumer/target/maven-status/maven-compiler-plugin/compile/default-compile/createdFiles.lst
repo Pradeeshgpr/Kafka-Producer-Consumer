@@ -1,0 +1,3 @@
+com\testKafka\consumer\rest\controller\ConsumerController.class
+com\testKafka\consumer\config\ConsumerConfig.class
+com\testKafka\consumer\main\SpringStarter.class
