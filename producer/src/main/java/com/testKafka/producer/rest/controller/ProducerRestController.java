@@ -3,6 +3,7 @@ package com.testKafka.producer.rest.controller;
 import com.testKafka.producer.service.ProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +15,7 @@ public class ProducerRestController {
     @Autowired
     ProducerService producerService;
 
-    @PostMapping(path = PRODUCER_CONTROLLER_TEST)
+    @GetMapping(path = PRODUCER_CONTROLLER_TEST)
     public ResponseEntity testProducer() {
         try {
             producerService.sendTestMessage();

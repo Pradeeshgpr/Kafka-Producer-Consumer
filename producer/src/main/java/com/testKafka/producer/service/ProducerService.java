@@ -18,9 +18,9 @@ public class ProducerService {
     private Producer<Long, String> producer;
 
     public void sendTestMessage() throws Exception{
-        producer.beginTransaction();
+//        producer.beginTransaction();
         producer.send(new ProducerRecord<Long, String>(TEST_TOPIC_NAME, TEST_MESSAGE));
-        producer.commitTransaction();
+//        producer.commitTransaction();
     }
 
 }

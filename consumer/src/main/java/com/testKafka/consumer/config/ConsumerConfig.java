@@ -23,6 +23,8 @@ import static org.apache.kafka.clients.consumer.ConsumerConfig.AUTO_OFFSET_RESET
 @Configuration
 public class ConsumerConfig {
 
+    public static final String COMSUMER_BEAN_NAME = "ConsumerConfig" ;
+
     @Value("${com.testKafka.producer.CLIENT_ID}")
     private String CLIENT_ID;
 
@@ -41,8 +43,7 @@ public class ConsumerConfig {
     @Value("${com.testKafka.producer.OFFSET_RESET_EARLIER}")
     private String OFFSET_RESET_EARLIER;
 
-    @Bean
-
+    @Bean(COMSUMER_BEAN_NAME)
     public Consumer<Long, String> createConsumer() {
         Properties props = new Properties();
         props.put(BOOTSTRAP_SERVERS_CONFIG, KAFKA_BROKERS);
