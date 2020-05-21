@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.Iterator;
@@ -28,7 +29,7 @@ public class ConsumerService {
     public void testConsumer() throws Exception {
         long startTime = new Date().getTime();
         while(true) {
-            ConsumerRecords<Long, String> consumerRecords = consumer.poll(1000);
+            ConsumerRecords<Long, String> consumerRecords = consumer.poll(Duration.ofNanos(1000));
             boolean isTestTopic = false;
             Iterator recordIter = consumerRecords.iterator();
             while (recordIter.hasNext()) {
