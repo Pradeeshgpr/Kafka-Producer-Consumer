@@ -11,6 +11,9 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.version>5.2.4.RELEASE</spring.version>
+        <querydsl.version>4.2.1</querydsl.version>
     </properties>
 
     <parent>
@@ -22,6 +25,8 @@
     <modules>
         <module>producer</module>
         <module>consumer</module>
+        <module>MongoDAO</module>
+        <module>SpringBootKafkaConfig</module>
     </modules>
 
     <build>
@@ -65,6 +70,11 @@
             <artifactId>kafka-clients</artifactId>
             <version>2.3.0</version>
         </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.12</version>
+            </dependency>
     </dependencies>
 
 </project>
